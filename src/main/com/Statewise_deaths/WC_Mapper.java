@@ -27,6 +27,7 @@ public class WC_Mapper extends MapReduceBase implements Mapper<LongWritable,Text
         }
 
         String[] DeathsData=valueString.split(",");
+        abstract class
         /*int death= Integer.parseInt(DeathsData[2]);*/
         int death=StringUtils.isNotBlank(DeathsData[2])?Integer.parseInt(DeathsData[2]):0;
         output.collect(new Text(DeathsData[1]),new IntWritable(death));
